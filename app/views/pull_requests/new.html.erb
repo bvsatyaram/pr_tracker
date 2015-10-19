@@ -1,0 +1,6 @@
+<h1>Track a new Pull Request</h1>
+
+<%= simple_form_for @pull_request do |f| %>
+  <%= f.input :link %>
+  <%= f.submit "Track", class: "btn btn-primary" %>
+<% end %>
