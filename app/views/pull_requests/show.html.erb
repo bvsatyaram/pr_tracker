@@ -1,1 +1,7 @@
-<h1><%= @pull_request.link %></h1>
+<h1><%= @pr_object.title %></h1>
+<p>
+  <%= raw Redcarpet::Markdown.new(Redcarpet::Render::HTML.new).render(@pr_object.body) %>
+</p>
+<div class="well">
+  <%= Github.repos.list user: 'CodeAstra' %>
+</div>
