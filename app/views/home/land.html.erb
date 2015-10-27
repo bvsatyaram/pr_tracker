@@ -1,4 +1,8 @@
 <h1>Home#land</h1>
 <p>Find me in app/views/home/land.html.erb</p>
-
-<%= link_to "Track a new PR", new_pull_request_path, class: "btn btn-primary" %>
+<% if user_signed_in? %>
+  <%= link_to "Track a new PR", new_pull_request_path, class: "btn btn-primary" %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-sm btn-danger" %>
+<% else %>
+  <%= link_to "Sign in with Github", user_omniauth_authorize_path(:github), class: "btn btn-lg btn-primary" %>
+<% end %>

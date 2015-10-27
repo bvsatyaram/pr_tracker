@@ -13,6 +13,10 @@ class PullRequestsController < ApplicationController
     @pull_requests = PullRequest.all
   end
 
+  def show
+    @pull_request = PullRequest.find(params[:id])
+  end
+
 private
   def pull_request_params
     params.require(:pull_request).permit(:link)
